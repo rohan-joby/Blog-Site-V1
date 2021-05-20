@@ -16,7 +16,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
-  res.render("home",{content1: homeStartingContent})
+  res.render("home",{startContent: homeStartingContent})
+})
+
+app.get("/about",(req,res)=>{
+  res.render("about",{startContent: contactContent})
+})
+
+app.get("/contact",(req,res)=>{
+  res.render("contact",{startContent: aboutContent})
 })
 
 
