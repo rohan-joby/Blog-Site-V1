@@ -27,6 +27,17 @@ app.get("/contact",(req,res)=>{
   res.render("contact",{startContent: aboutContent})
 })
 
+app.get("/compose",(req,res)=>{
+  res.render("compose")
+})
+
+app.post("/compose", (req,res)=>{
+  const title = req.body.title;
+  const content = req.body.content;
+  const input = {title,content};
+  //console.log(input);
+})
+
 
 
 
