@@ -40,10 +40,13 @@ app.get("/compose", (req, res) => {
 
 app.get("/posts/:title", (req,res)=>{
   const searchInput = lodash.lowerCase(req.params.title);
-  // console.log(searchInput);
+
   posts.forEach(post =>{
     if ( lodash.lowerCase(post.title) === searchInput){
-      console.log("match found!");
+      res.render("post",
+      { postTitle : post.title, 
+        postToShow : post.content
+      })
     }
   })
 })
