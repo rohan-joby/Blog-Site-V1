@@ -3,7 +3,9 @@
 <p><%= startContent %> </p>
 <% userPost.forEach(post =>{ %>
     <h1><%= post.title %></h1>
-    <p><%= post.content %></p>
+    <p><%= (post.content).slice(1,101)+"..." %>
+        <a href="/posts/<%= post.title %>">Read More</a>
+    </p>
 <% }) %>
 
 <%- include("./partials/footer") %> 
